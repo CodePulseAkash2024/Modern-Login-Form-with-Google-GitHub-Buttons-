@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e9e9e9;
+    font-family: 'Space Mono', monospace;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.form {
+    --background: #d3d3d3;
+    --input-focus: #2d8cf0;
+    --font-color: #323232;
+    --font-color-sub: #666;
+    --bg-color: #fff;
+    --main-color: #323232;
+
+    width: 100%;
+    max-width: 320px;
+
+    padding: 25px 20px;
+
+    background: var(--background);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+
+    box-shadow: 4px 4px var(--main-color);
+}
+
+.form > p {
+    font-family: 'Dela Gothic One', cursive;
+    color: var(--font-color);
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
+
+.form > p > span {
+    font-family: 'Space Mono', monospace;
+    color: var(--font-color-sub);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.separator {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.separator > div {
+    flex: 1;
+    height: 3px;
+    border-radius: 5px;
+    background-color: var(--font-color-sub);
+}
+
+.separator > span {
+    color: var(--font-color);
+    font-family: 'Space Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* OAuth Buttons */
+
+.oauthButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 15px;
+
+    width: 100%;
+    height: 45px;
+
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Space Mono', monospace;
+
+    color: var(--font-color);
+    cursor: pointer;
+
+    transition: all 250ms;
+
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.oauthButton::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 0;
+
+    background-color: #212121;
+
+    z-index: -1;
+
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+
+    transition: all 250ms;
+}
+
+.oauthButton:hover {
+    color: #e8e8e8;
+}
+
+.oauthButton:hover::before {
+    width: 100%;
+}
+
+.oauthButton:active {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(4px, 4px);
+}
+
+.form > input {
+    width: 100%;
+    height: 45px;
+
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Space Mono', monospace;
+
+    color: var(--font-color);
+
+    padding: 5px 12px;
+    outline: none;
+
+    transition: 250ms;
+}
+
+.form > input:focus {
+    border-color: var(--input-focus);
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+}
+
+.arrow {
+    margin-left: 5px;
+}
+
+@media (max-width: 400px) {
+
+    .form {
+        max-width: 100%;
+        padding: 20px 15px;
+    }
+
+    .form > p {
+        font-size: 18px;
+    }
+
+    .oauthButton {
+        font-size: 13px;
+    }
+
+}
